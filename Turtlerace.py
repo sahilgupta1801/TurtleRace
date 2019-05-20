@@ -1,4 +1,3 @@
-#!/bin/python3
 from turtle import *
 from random import randint
 penup()
@@ -15,6 +14,7 @@ for step in range(15):
   left(90)
   forward(20)
 
+
 ada=Turtle()
 ada.color('Red')
 ada.shape('turtle')
@@ -25,7 +25,42 @@ bob.color('Blue')
 bob.shape('turtle')
 bob.penup()
 bob.goto(-160,70)
+akash=Turtle()
+akash.color('Green')
+akash.shape('turtle')
+akash.penup()
+sum1=0
+sum2=0
+sum3=0
+akash.goto(-160,40)
 for turn in range(100):
-  
-  ada.forward(randint(1,5))
-  bob.forward(randint(1,5))
+
+	pos1=randint(1,5)
+	sum1=sum1+pos1
+	ada.forward(pos1)
+
+	pos2=randint(1,5)
+	sum2=sum2+pos2
+	bob.forward(pos2)
+
+	pos3=randint(1,5)
+	sum3=sum3+pos3
+	akash.forward(pos3)
+
+if(sum1>sum2 and sum1 >sum3):
+	ada.write('Red Wins !')
+elif(sum2>sum1 and sum2>sum3):
+	bob.write('Blue Wins !')
+elif(sum3>sum1 and sum3>sum2):
+	akash.write('Green Wins !')
+elif(sum1==sum2 and sum1>sum3):
+	ada.write('Tie between Red and Blue')
+elif(sum1==sum3 and sum1>sum2):
+	ada.write('Tie between Red and Green')
+elif(sum2==sum3 and sum2>sum1):
+	ada.write('Tie between Blue and Green')
+elif(sum1==sum2 and sum1==sum3):
+	ada.write('All Tie')
+
+win=ada.getscreen()
+win.exitonclick();
